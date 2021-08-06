@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Steam Invest</title>
+</head>
+
+<body class="center">
+
+    <!-- Регистрация -->
+    <div class="modal-registration-wrapper">
+        <div class="modal-registration">
+            <div class="modregistration__title modal-window__title">Регистрация аккаунта</div>
+            <form class="modal-registration__form" action="">
+                <input class="modal-registration__form__input add-input" name="mail" type="text" placeholder="Почта"
+                    required>
+                <input class="modal-registration__form__input add-input" name="pass" type="password"
+                    placeholder="Пароль" required>
+                <div class="modal-registration__form__registration">Войти</div>
+                <button class="modal-registration__form__submit buttons" type="submit">Зарегистрироваться</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Логин -->
+    <div class="modal-login-wrapper">
+        <div class="modal-login">
+            <div class="modal-login__title modal-window__title">Войти в свой аккаунт</div>
+            <form class="modal-login__form" action="">
+                <input class="modal-login__form__input add-input" name="mail" type="text" placeholder="Почта">
+                <input class="modal-login__form__input add-input" name="pass" type="password" placeholder="Пароль">
+                <div class="modal-login__form__registration">Регистрация</div>
+                <button class="modal-login__form__submit buttons" type="submit">Войти</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Управление ролями -->
+    <div class="modal-role-wrapper admin">
+        <div class="modal-role">
+            <div class="modal-role__title modal-window__title">Выдать новую роль</div>
+            <form class="modal-role__form" action="">
+                <input class="modal-role__form__input add-input" name="mail" type="text" placeholder="Почта" required>
+                <button class="modal-role__form__submit buttons" type="submit" name="admin-role">Выдать админа</button>
+                <button class="modal-role__form__submit buttons" type="submit" name="elite-role">Выдать элиту</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="modal-window-wrapper admin">
+        <div class="modal-window">
+            <div class="modal-window__title">Добавить инвестицию</div>
+            <form class="db-add-form" action="">
+                <input class="db-add-form__title-input add-input" name="title" type="text" placeholder="Название">
+                <input class="db-add-form__description-input add-input" name="description" type="text"
+                    placeholder="Описание">
+                <input class="db-add-form__rating-input add-input" name="rating" type="text" placeholder="Рейтинг">
+                <input class="db-add-form__durability-input add-input" name="durability" type="text" placeholder="Срок">
+                <input class="db-add-form__target-input add-input" name="target" type="text"
+                    placeholder="Ожидания по цене">
+
+                <input class="db-add-form__image-input" id="db-add-form__image-input" name="image" type="file"
+                    accept=".png, .jpg, .jpeg">
+                <label class="image-input__label" for="db-add-form__image-input">
+                    <div class="image-input__button buttons" type="button">Картинка</div>
+                </label>
+
+                <button class="db-add-form__add-link buttons" type="button">Добавить ссылку</button>
+                <div class="db-add-form__add-links-wrapper"></div>
+                <button class="db-add-form__btn buttons" type="submit">Добавить в базу данных</button>
+            </form>
+        </div>
+    </div>
+    <header class="header">
+        <div class="header__wrapper container">
+            <div class="title-list">
+                <!-- <a class="title-list__item">Важная информация</a> -->
+                <a class="title-list__item title-list__item--active">Инвестиции</a>
+            </div>
+            <div class="user-profile">
+                <button class="title-list__roles buttons admin" id="role-management">Управление ролями</button>
+                <div class="title-list__item login-account" id="login">Войти</div>
+                <div class="title-list__item logout-account" id="logout">Выйти</div>
+            </div>
+        </div>
+    </header>
+    <section class="page-content">
+        <section class="header-buttons container">
+            <div class="header-buttons-wrapper admin">
+                <!-- <input class="header-buttons__search" type="text" placeholder="Поиск"> -->
+                <button class="header-buttons__add buttons">Добавить</button>
+                <button class="header-buttons__remove buttons">Удалить</button>
+            </div>
+        </section>
+        <!-- <section class="sort-list container">
+            <div class="sort-list__wrapper">
+                <div class="sort-list__item">
+                    Игра: <span class="sort-list__item-select">CS GO</span>
+                </div>
+                <div class="sort-list__item">
+                    Сортировка по: <span class="sort-list__item-select">Времени</span>
+                </div>
+            </div>
+        </section> -->
+        <section class="card-list container">
+            <ul class="card-list-wrapper">
+
+            </ul>
+        </section>
+    </section>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-auth.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-storage.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-functions.js"></script>
+    <script src="./info.js"></script>
+    <script src="./firebase.js"></script>
+    <script src="./app.js"></script>
+</body>
+
+</html>
