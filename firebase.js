@@ -3,7 +3,6 @@
 
 // Your web app's Firebase configuration
 var firebaseConfig = {
-    apiKey: "AIzaSyAkj-PIYX2G8WWlki_jfFASEaAD7G9auek",
     authDomain: "fir-project-e6880.firebaseapp.com",
     projectId: "fir-project-e6880",
     storageBucket: "fir-project-e6880.appspot.com",
