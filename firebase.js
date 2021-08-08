@@ -2,7 +2,8 @@
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-var firebaseConfig = {
+const firebaseConfig = {
+    apiKey: "AIzaSyAkj-PIYX2G8WWlki_jfFASEaAD7G9auek",
     authDomain: "fir-project-e6880.firebaseapp.com",
     projectId: "fir-project-e6880",
     storageBucket: "fir-project-e6880.appspot.com",
