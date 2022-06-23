@@ -62,8 +62,8 @@ auth.onAuthStateChanged(user => {
         console.log('user logged in: ', user.email)
 
         //real-time listener
-        //db.collection('').orderBy('date', 'desc')
-        db.collection('investments').orderBy('publicationDate').onSnapshot(snapshot => {
+        // desc - asc
+        db.collection('investments').orderBy('timestamp', 'asc').onSnapshot(snapshot => {
             let changes = snapshot.docChanges()
             changes.forEach(change => {
                 if (change.type === 'added') {
@@ -281,6 +281,7 @@ async function savingData(e) {
             image: url,
             links: itemsLinks,
             publicationDate: new Date().toLocaleDateString('ru', { hour: "2-digit", minute: "2-digit", second: "2-digit" }),
+            timestamp: Date.now()
         })
 
         modalWindow.classList.remove('modal-window--active')
